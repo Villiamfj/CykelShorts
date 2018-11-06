@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoLeft : MonoBehaviour {
     public float speed;
+    public float height;
     Rigidbody2D rb2d;
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,10 @@ public class GoLeft : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (height != 0)
+        {
+            transform.position = new Vector2(transform.position.x, height);
+        }
         rb2d.velocity = new Vector2(-speed, 0);
     }
 }
