@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour {
     bool isGrounded;
     Animator Anim;
     CircleCollider2D Ccol;
+    public float speed;
+    float startSpeed;
+    public float multiplier;
+    static public PlayerController reference;
 
 	// Use this for initialization
 	void Start () {
@@ -16,10 +20,15 @@ public class PlayerController : MonoBehaviour {
         isGrounded = true;
         Anim = GetComponent<Animator>();
         Ccol = GetComponent<CircleCollider2D>();
+        reference = this;
+        startSpeed = speed;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        //speed ramping
+        speed = speed *(1 + multiplier/100);
+
 		//jump
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
@@ -63,6 +72,7 @@ public class PlayerController : MonoBehaviour {
         //Enemy Collision
         if(collision.gameObject.tag == "Obstacle")
         {
+            speed = startSpeed;
             //GameOver
             //insæt gameOver her
             Debug.Log("GameOver");

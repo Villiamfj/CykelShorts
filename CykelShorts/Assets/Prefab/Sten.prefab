@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Time: 3
+  offset: -5
 --- !u!114 &114212209075266558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b204833cd42b35499b59a7314b7b0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   height: 0
 --- !u!212 &212203620853214490
 SpriteRenderer:
