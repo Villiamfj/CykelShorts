@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     float startSpeed;
     public float multiplier;
+    public float Score;
     static public PlayerController reference;
+
 
 	// Use this for initialization
 	void Start () {
@@ -22,12 +24,14 @@ public class PlayerController : MonoBehaviour {
         Ccol = GetComponent<CircleCollider2D>();
         reference = this;
         startSpeed = speed;
+        Score = 1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         //speed ramping
         speed = speed *(1 + multiplier/100);
+        Score += 1;
 
 		//jump
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))

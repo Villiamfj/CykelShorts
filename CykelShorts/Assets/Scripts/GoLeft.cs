@@ -6,6 +6,7 @@ public class GoLeft : MonoBehaviour {
     float speed;
     public float height;
     Rigidbody2D rb2d;
+    public float EksSpeed;
 	// Use this for initialization
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();
@@ -17,6 +18,6 @@ public class GoLeft : MonoBehaviour {
         {
             transform.position = new Vector2(transform.position.x, height);
         }
-        rb2d.velocity = new Vector2(-PlayerController.reference.speed, 0);
+        rb2d.velocity = new Vector2(-PlayerController.reference.speed - EksSpeed, 0);
     }
 }
