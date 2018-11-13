@@ -647,8 +647,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpHeight: 450
   speed: 5
-  multiplier: 0.01
+  Health: 0
+  multiplier: 0.02
   Score: 0
+  ScoreMultiplier: 1
+  StartScoreMultiplier: 1
+  MultiplierPeriod: 10
+  period: 0.1
 --- !u!58 &881294135
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -769,6 +774,7 @@ RectTransform:
   m_Children:
   - {fileID: 1980094416}
   - {fileID: 530269766}
+  - {fileID: 1597081264}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -901,6 +907,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 881294129}
   OtherBack: {fileID: 242291857}
+--- !u!1 &1597081263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1597081264}
+  - component: {fileID: 1597081267}
+  - component: {fileID: 1597081266}
+  - component: {fileID: 1597081265}
+  m_Layer: 5
+  m_Name: Liv
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1597081264
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597081263}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 907764577}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -500, y: -50}
+  m_SizeDelta: {x: 1000, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1597081265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597081263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b31c97434c0ef4db2e4672c8303bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Htext: {fileID: 1597081266}
+--- !u!114 &1597081266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597081263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8705883, g: 0.427451, b: 0.2901961, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: bcb0e56a0d889d047800701e19151213, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 70
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '"Health"'
+--- !u!222 &1597081267
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597081263}
+  m_CullTransparentMesh: 0
 --- !u!1 &1834495910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,11 +1210,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 8078c748c8d388640b0bf8e7db543d32, type: 3}
+  - {fileID: 8300000, guid: 92f1c043935c7464393b8daee02e3aee, type: 3}
+  - {fileID: 8300000, guid: 7089a227263d6f144816acf592d86d15, type: 3}
 --- !u!82 &2078911724
 AudioSource:
   m_ObjectHideFlags: 0

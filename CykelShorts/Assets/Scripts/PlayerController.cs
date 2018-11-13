@@ -11,13 +11,22 @@ public class PlayerController : MonoBehaviour {
     CircleCollider2D Ccol;
     public float speed;
     float startSpeed;
+    public float Health;
     public float multiplier;
     public float Score;
+    public float ScoreMultiplier;
+    public float StartScoreMultiplier;
     static public PlayerController reference;
 
+    private float nextActionTime = 0.0f;
+    private float NextMultiPlierTime = 10f;
+    public float MultiplierPeriod = 10f;
+    public float period = 0.1f;
 
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void Start () {
         rb2d = GetComponent<Rigidbody2D>();
         isGrounded = true;
         Anim = GetComponent<Animator>();
@@ -25,13 +34,39 @@ public class PlayerController : MonoBehaviour {
         reference = this;
         startSpeed = speed;
         Score = 1;
+        Health = 3;
+        StartScoreMultiplier = ScoreMultiplier;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        
+        // Score timer
+        if (Time.timeSinceLevelLoad > nextActionTime)
+        {
+            nextActionTime += period;
+
+
+
+
+            Score += 1 * ScoreMultiplier;
+
+            if (Time.timeSinceLevelLoad > NextMultiPlierTime)
+            {
+                NextMultiPlierTime += MultiplierPeriod;
+
+                ScoreMultiplier += 1;
+                //afspiller cykel lyd
+                //AudioManager.audioManager.playSound(0);
+            }
+        }
+
+
+
         //speed ramping
         speed = speed *(1 + multiplier/100);
-        Score += 1;
+
 
 		//jump
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
@@ -76,10 +111,16 @@ public class PlayerController : MonoBehaviour {
         //Enemy Collision
         if(collision.gameObject.tag == "Obstacle")
         {
+            //AudioManager.audioManager.playSound(1);
             speed = startSpeed;
-            //GameOver
-            //insæt gameOver her
-            Debug.Log("GameOver");
+            ScoreMultiplier = StartScoreMultiplier;
+            Health -= 1;
+            if (Health == 0)
+            {
+                //gameOver
+                //AudioManager.audioManager.playSound(2);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 }

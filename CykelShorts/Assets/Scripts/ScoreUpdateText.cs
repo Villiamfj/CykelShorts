@@ -12,6 +12,6 @@ public class ScoreUpdateText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        ScoreText.text ="" + PlayerController.reference.Score;
+        ScoreText.text ="" + PlayerController.reference.Score + "x" + PlayerController.reference.ScoreMultiplier;
 	}
 }
