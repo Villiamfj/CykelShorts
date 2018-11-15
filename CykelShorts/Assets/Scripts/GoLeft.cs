@@ -18,6 +18,8 @@ public class GoLeft : MonoBehaviour {
         {
             transform.position = new Vector2(transform.position.x, height);
         }
-        rb2d.velocity = new Vector2(-PlayerController.reference.speed - EksSpeed, 0);
+        if ( speed == 0) { EksSpeed = 0; }
+            rb2d.velocity = new Vector2(-PlayerController.reference.speed - EksSpeed, 0);
+
     }
 }
