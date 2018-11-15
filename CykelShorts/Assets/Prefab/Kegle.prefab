@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114158155752691922}
   - component: {fileID: 61748565410052074}
   m_Layer: 0
-  m_Name: Sten
+  m_Name: Kegle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Time: 3
-  offset: -5
 --- !u!114 &114212209075266558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
+  EksSpeed: 0
 --- !u!212 &212203620853214490
 SpriteRenderer:
   m_ObjectHideFlags: 1
