@@ -79,17 +79,17 @@ public class PlayerController : MonoBehaviour {
             //jump
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             {
-                //if (rb2d.velocity.y == 0)
-                //{
-                //    isGrounded = true;
-                //}
-                if (isGrounded)
+                if (Input.GetKey(KeyCode.S))
+                {
+                    //nothing
+                }
+                else if (isGrounded)
                 {
                     Anim.SetInteger("state", 2);
                     rb2d.AddForce(new Vector2(0, JumpHeight));
                     isGrounded = false;
                 }
-
+                
             }
             if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W))
             {
