@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnies:
-  - {fileID: 1113977347006980, guid: 908d1dbff5d3a0a4d9f77a5a91dcda84, type: 2}
+  - {fileID: 1376920149336202, guid: 908d1dbff5d3a0a4d9f77a5a91dcda84, type: 2}
   - {fileID: 1812976637558778, guid: a3858092d8d2f714f8b0d8848ec1ebc3, type: 2}
   minCooldown: 2
   maxCooldown: 4
