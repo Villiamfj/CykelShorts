@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(menu.name);
-            SceneManager.LoadScene(menu.name);
         }
 
         if (GAMEOVER.active == false)
