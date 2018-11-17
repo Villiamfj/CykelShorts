@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PRESS R TO RESTART
+  m_Text: PRESS R TO RESTART OR ESC TO GO BACK
 --- !u!222 &108076549
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -852,6 +852,7 @@ MonoBehaviour:
   Score: 0
   ScoreMultiplier: 1
   StartScoreMultiplier: 1
+  menu: {fileID: 102900000, guid: 45a4546ee05e0a841ba32a36f1e0b0de, type: 3}
   GAMEOVER: {fileID: 0}
   MultiplierPeriod: 10
   period: 0.1
