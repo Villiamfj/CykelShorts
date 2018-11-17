@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     public float Score;
     public float ScoreMultiplier;
     public float StartScoreMultiplier;
+    public Object menu;
     public GameObject GAMEOVER;
     static public PlayerController reference;
 
@@ -46,6 +47,11 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(menu.name);
+            SceneManager.LoadScene(menu.name);
         }
 
         if (GAMEOVER.active == false)
