@@ -134,7 +134,11 @@ public class PlayerController : MonoBehaviour {
                     AudioManager.audioManager.playSound(1);
                 }
 
-                speed = startSpeed;
+                //speed = startSpeed;
+                if ((speed * 0.75F) > startSpeed)
+                {
+                    speed = speed * 0.75F;
+                }
                 ScoreMultiplier = StartScoreMultiplier;
             }
 

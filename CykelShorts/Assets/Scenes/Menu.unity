@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Text: 'PRESS W TO JUMP
 
 
-    PRESS S TO DODGE INCOMMING FLYING OBSTACLES'
+    PRESS S TO DODGE FLYING OBSTACLES'
 --- !u!222 &1921890822
 CanvasRenderer:
   m_ObjectHideFlags: 0
